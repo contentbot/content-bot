@@ -1,6 +1,5 @@
 .env
 client_secrets/
 output/
-assets/backgrounds/*.mp4
 *.pyc
 __pycache__/
