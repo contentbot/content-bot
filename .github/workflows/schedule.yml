@@ -27,6 +27,12 @@ jobs:
         env:
           YOUTUBE_CLIENT_SECRET_JSON: ${{ secrets.YOUTUBE_CLIENT_SECRET_JSON }}
 
+      - name: Set up youtube_token
+        run: |
+          echo "$YOUTUBE_TOKEN_BASE64" | base64 --decode > client_secrets/youtube_token.pickle
+        env:
+          YOUTUBE_TOKEN_BASE64: ${{ secrets.YOUTUBE_TOKEN_BASE64 }}
+
       - name: Test Anthropic connectivity
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
